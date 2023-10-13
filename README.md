@@ -1,3 +1,7 @@
+# Funxtion PHP SDK
+
+## Usage
+
 ```php
 $funxtion = new \Funxtion\Funxtion(
     token: '123123123',
@@ -18,6 +22,8 @@ $funxtion->exercises()->list(
     ),
 );
 ```
+
+## Example Implementation
 
 ```php
 use Funxtion\Funxtion;
