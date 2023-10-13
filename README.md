@@ -20,10 +20,13 @@ $funxtion->exercises()->list(
 ```
 
 ```php
+use Funxtion\Funxtion;
+use Funxtion\ValueObjects\ExerciseCollectionItem;
+
 class FunxtionService
 {
     public function __construct(
-        private readonly \Funxtion\Funxtion $funxtion,
+        private readonly Funxtion $funxtion,
     ) {}
     
     public function listExercise()
@@ -31,7 +34,7 @@ class FunxtionService
         $response = $this->funxtion->exercises()->list();
         
         return array_map(
-            callback: fn (array $item) => \Funxtion\ValueObjects\ExerciseCollectionItem::fromArray(
+            callback: fn (array $item) => ExerciseCollectionItem::fromArray(
                 data: $item,
             ),
             array: json_decode(
