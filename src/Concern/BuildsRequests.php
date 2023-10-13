@@ -11,14 +11,18 @@ use Http\Client\Common\PluginClient;
 use Http\Discovery\Psr17FactoryDiscovery;
 use Http\Discovery\Psr18ClientDiscovery;
 use Http\Message\Authentication\Bearer;
+use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestInterface;
 
 trait BuildsRequests
 {
-    public function client(string $token, null|Language $language = null): PluginClient
-    {
+    public function client(
+        string $token,
+        null|Language $language = null,
+        null|ClientInterface $client = null,
+    ): PluginClient {
         return new PluginClient(
-            client: Psr18ClientDiscovery::find(),
+            client: $client ?? Psr18ClientDiscovery::find(),
             plugins: [
                 new AuthenticationPlugin(
                     authentication: new Bearer(

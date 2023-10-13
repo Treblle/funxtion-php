@@ -25,7 +25,8 @@
     "php-http/mock-client": "^1.6",
     "phpstan/phpstan": "^1.10.34",
     "phpunit/phpunit": "^10.4",
-    "roave/security-advisories": "dev-latest"
+    "roave/security-advisories": "dev-latest",
+    "symfony/http-client": "^6.3"
   },
   "autoload": {
     "psr-4": {
