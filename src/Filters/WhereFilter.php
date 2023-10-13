@@ -21,7 +21,7 @@ final readonly class WhereFilter implements Filter
         $query = "filter[{$this->filter}][{$this->key}]";
 
         if ($this->operator) {
-            $query .= "[{$this->operator}->value]";
+            $query .= "[{$this->operator->value}]";
         }
 
         $query .= "={$this->value}";
