@@ -6,5 +6,4 @@ namespace Funxtion\Filters;
 
 final class PaginationFilter extends Filter
 {
-
 }

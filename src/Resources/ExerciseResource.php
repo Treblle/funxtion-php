@@ -16,7 +16,8 @@ final readonly class ExerciseResource
 
     public function __construct(
         private Funxtion $funxtion,
-    ) {}
+    ) {
+    }
 
     /**
      * @param Filter ...$filters

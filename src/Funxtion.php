@@ -13,7 +13,8 @@ final readonly class Funxtion
         protected string $token,
         protected string $url,
         protected Language $language,
-    ) {}
+    ) {
+    }
 
     public function exercises(): ExerciseResource
     {
