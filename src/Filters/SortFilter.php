@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Funxtion\Filters;
 
-final class SortFilter extends Filter
+final readonly class SortFilter implements Filter
 {
     public function __construct(
-        public readonly string $key,
-        public readonly string $filter = 'order',
-        public readonly string $direction = 'desc',
+        public string $key,
+        public string $filter = 'order',
+        public string $direction = 'desc',
     ) {
     }
 

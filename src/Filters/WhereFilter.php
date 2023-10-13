@@ -6,13 +6,26 @@ namespace Funxtion\Filters;
 
 use Funxtion\Enums\Operator;
 
-final class WhereFilter extends Filter
+final readonly class WhereFilter implements Filter
 {
     public function __construct(
-        public readonly string $key,
-        public readonly string $value,
-        public readonly null|Operator $operator = null,
-        public readonly string $filter = 'where',
+        public string $key,
+        public string $value,
+        public null|Operator $operator = null,
+        public string $filter = 'where',
     ) {
+    }
+
+    public function toQueryParameter(): string
+    {
+        $query = "filter[{$this->filter}][{$this->key}]";
+
+        if ($this->operator) {
+            $query .= "[{$this->operator}->value]";
+        }
+
+        $query .= "={$this->value}";
+
+        return $query;
     }
 }

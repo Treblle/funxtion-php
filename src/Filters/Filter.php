@@ -12,18 +12,7 @@ use Funxtion\Enums\Operator;
  * @property-read null|Operator $operator
  * @property-read string $filter
  */
-abstract class Filter
+interface Filter
 {
-    public function toQueryParameter(): string
-    {
-        $query = "filter[{$this->filter}][{$this->key}]";
-
-        if ($this->operator) {
-            $query .= "[{$this->operator}->value]";
-        }
-
-        $query .= "={$this->value}";
-
-        return $query;
-    }
+    public function toQueryParameter(): string;
 }
