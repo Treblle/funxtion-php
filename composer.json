@@ -1,0 +1,70 @@
+{
+  "name": "treblle/funxtion-sdk",
+  "description": "The PHP SDK for the Funxtion API.",
+  "version": "0.0.1",
+  "type":  "library",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "role": "Developer",
+      "name": "Steve McDougall",
+      "email": "juststevemcd@gmail.com",
+      "homepage": "https://www.juststeveking.uk/"
+    }
+  ],
+  "require": {
+    "php": "^8.2",
+    "php-http/discovery": "^1.19",
+    "psr/http-factory": "^1.0",
+    "psr/http-message": "^2.0"
+  },
+  "require-dev": {
+    "laravel/pint": "^1.13.1",
+    "nyholm/psr7": "^1.8",
+    "php-http/mock-client": "^1.6",
+    "phpstan/phpstan": "^1.10.34",
+    "phpunit/phpunit": "^10.4",
+    "roave/security-advisories": "dev-latest"
+  },
+  "autoload": {
+    "psr-4": {
+      "Funxtion\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "pint": [
+      "./vendor/bin/pint"
+    ],
+    "stan": [
+      "./vendor/bin/phpstan analyse --memory-limit=3g"
+    ],
+    "test": [
+      "./vendor/bin/phpunit --testdox"
+    ],
+    "dump": [
+      "composer dump-autoload --optimize --classmap-authoritative --strict-psr"
+    ]
+  },
+  "scripts-descriptions": {
+    "pint": "Run the Laravel Pint code style tools.",
+    "stan": "Run the PhpStan static analysis tool.",
+    "test": "Run the test suite.",
+    "dump": "Dump the composer autoloader in a strict way."
+  },
+  "config": {
+    "preferred-install": {
+      "*": "dist"
+    },
+    "optimize-autoloader": true,
+    "sort-packages": true,
+    "allow-plugins": {
+      "php-http/discovery": true
+    }
+  }
+}
